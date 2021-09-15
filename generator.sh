@@ -1,8 +1,16 @@
 #!/bin/bash
 
 #SET THESE (VOICEBANK DIRECTORY AND OUTPUT FILE)
-VOICEDIR=
-OUTFILE=
+
+while getopts v:o:i: flag 
+do
+	case "$flag" in
+		v) VOICEDIR=${OPTARG} ;;
+		o) OUTFILE=${OPTARG} ;;
+		i) INFILE=${OPTARG} ;;
+		*) echo "invalid argument" ;;
+	esac
+done
 
 echo "[#VERSION]"
 echo "UST Version1.2"
@@ -32,7 +40,7 @@ do
 	echo "Envelope=60.0,1.0,1.0,100.0,100.0,100.0,100.0,7.0,60.0,1.0,100.0,0.0"
 	echo "VBR=0,0,0,0,0,0,0,0,0,0"
 	index=$(( $index+1 ))
-done <<< "$(sed 's/ /\n/g' $1)"
+done <<< "$(sed 's/ /\n/g' $INFILE)"
 
 echo "[#TRACKEND]"
 
