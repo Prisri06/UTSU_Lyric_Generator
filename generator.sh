@@ -1,7 +1,8 @@
 #!/bin/bash
 
-VOICEDIR=/home/priya/Downloads/mimi_english1.1/Mimi_Yorune_English_Ver1.1
-OUTFILE=/home/priya/Downloads/utsu_0.4.4_linux/Utsu/bin/outputFile
+#SET THESE (VOICEBANK DIRECTORY AND OUTPUT FILE)
+VOICEDIR=
+OUTFILE=
 
 echo "[#VERSION]"
 echo "UST Version1.2"
